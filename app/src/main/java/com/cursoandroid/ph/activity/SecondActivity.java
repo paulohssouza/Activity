@@ -16,9 +16,9 @@ public class SecondActivity extends AppCompatActivity {
         textViewAge = findViewById(R.id.textView2);
 
         Bundle dados = getIntent().getExtras();
-        String nome = dados.getString("nome");
+        User user = (User) dados.getSerializable("object");
         int idade = dados.getInt("idade");
-        textViewName.setText(nome);
-        textViewAge.setText(String.valueOf(idade));
+        textViewName.setText(user.getName());
+        textViewAge.setText(String.valueOf(user.getEmail()));
     }
 }
